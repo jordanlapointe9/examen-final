@@ -325,6 +325,34 @@ body {
   width: 100%;
 }
 
+.container-evenements .articles-evenements .content-post .tableau-entete-1 {
+  width: 100%;
+  background-color: #003400;
+  color: white;
+  text-align: center;
+}
+
+.container-evenements .articles-evenements .content-post .tableau-entete-2 {
+  width: 100%;
+  background-color: #006700;
+  color: white;
+  text-align: center;
+}
+
+.container-evenements .articles-evenements .content-post .tableau-entete-3 {
+  width: 100%;
+  background-color: #009a00;
+  color: #040404;
+  text-align: center;
+}
+
+.container-evenements .articles-evenements .content-post .tableau-entete-4 {
+  width: 100%;
+  background-color: #00cd00;
+  color: black;
+  text-align: center;
+}
+
 .container-evenements .articles-evenements .content-post .title-article {
   margin-bottom: 0;
 }

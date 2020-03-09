@@ -15,6 +15,34 @@
     .content-post {
       @extend %displayFlexColumnCenter;
 
+      .tableau-entete-1 {
+        width: 100%; 
+        background-color: darken($green, 15%);
+        color: lighten($white, 15%);
+        text-align: center;
+      }
+
+      .tableau-entete-2 {
+        width: 100%; 
+        background-color: darken($green, 5%);
+        color: lighten($white, 5%);
+        text-align: center;
+      }
+
+      .tableau-entete-3 {
+        width: 100%; 
+        background-color: lighten($green, 5%);
+        color: darken($black, 5%);
+        text-align: center;
+      }
+
+      .tableau-entete-4 {
+        width: 100%; 
+        background-color: lighten($green, 15%);
+        color: darken($black, 15%);
+        text-align: center;
+      }
+
       .title-article {
         margin-bottom: 0;
         a {

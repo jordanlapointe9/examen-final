@@ -110,6 +110,8 @@ get_header();
             wp_reset_postdata();
         echo '</div>';
 
+        $i = 0;
+
         if ( have_posts() ) :
             echo '<div class="container-evenements">';
                 while ( $queryNouvelles->have_posts() ) : $queryNouvelles->the_post();
@@ -117,7 +119,6 @@ get_header();
                     $auteur = (int) get_post_field( 'post_author', $post_author_id );
                     $heureGrid = (int) substr(get_post_field( 'post_name'),-2);
                     $auteurGrid = convertHeureEnColone($auteur);
-
                     $gridArea = ''.$heure.'/'.$auteurGrid.'/'.$heureGrid.'/'.$auteurGrid.'';
 
                     echo '
@@ -125,9 +126,57 @@ get_header();
                         grid-area: '.$gridArea.';
                     ">
                         <div class="content-post">
+                    ';
+
+                            
+                            if($gridArea == "8/1/8/1") {
+                                echo '
+                                <div class="tableau-entete-1">
+                                    <h3>'.get_the_author_meta( 'display_name', $post->post_author ).'</h3>
+                                </div>
+                                ';
+                            }
+
+                            if($gridArea == "8/2/8/2") {
+                                echo '
+                                <div class="tableau-entete-2">
+                                    <h3>'.get_the_author_meta( 'display_name', $post->post_author ).'</h3>
+                                </div>
+                                ';
+                            }
+
+                            if($gridArea == "8/3/8/3") {
+                                echo '
+                                <div class="tableau-entete-3">
+                                    <h3>'.get_the_author_meta( 'display_name', $post->post_author ).'</h3>
+                                </div>
+                                ';
+                            }
+
+                            if($gridArea == "8/4/8/4") {
+                                echo '
+                                <div class="tableau-entete-4">
+                                    <h3>'.get_the_author_meta( 'display_name', $post->post_author ).'</h3>
+                                </div>
+                                ';
+                            }
+                            
+                            if($i < 4) {
+                                echo '
+                                    <h3 style="grid-area:12/2/12/2">LUNCH</h3>
+                                ';
+
+                                $i++;
+                            }
+
+
+
+                            echo '
                             <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
                             <p class="field-article">'.get_post_field('post_name').'</p>
                             <p class="author-article">'.get_the_author_meta( 'display_name', $post->post_author ).'</p>
+                            
+
                         </div>
                     </article>
                     ';
