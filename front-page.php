@@ -53,10 +53,12 @@ get_header();
         ?>
 
         <?php
+        echo '<h1>Nos ateliers :</h1>';
         echo '<div class="categories-container">';
             while ( $queryNouvelles->have_posts() ) {
                 $queryNouvelles->the_post();
                 echo '
+                
                 <article class="categories-ateliers">
                     <div class="content-post">
                         <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
