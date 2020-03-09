@@ -52,25 +52,7 @@ get_header();
         wp_reset_query(); //resetting the page query.
         ?>
 
-        <?php
-        echo '<h1>Nos ateliers :</h1>';
-        echo '<div class="categories-container">';
-            while ( $queryNouvelles->have_posts() ) {
-                $queryNouvelles->the_post();
-                echo '
-                
-                <article class="categories-ateliers">
-                    <div class="content-post">
-                        <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
-                        <p class="field-article">'.get_post_field('post_name').'</p>
-                        <p class="author-article">'.get_the_author_meta( 'display_name', $post->post_author ).'</p>
-                    </div>
-                </article>
-                ';
-            }
-            wp_reset_postdata();
-        echo '</div>';
-        ?>
+        
 
         <?php
         echo '<div class="categories-container">';

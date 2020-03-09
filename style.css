@@ -71,7 +71,8 @@ Text Domain: tp2-veille-child
           align-items: flex-start;
   width: 100%;
   height: auto;
-  max-height: 8vh;
+  max-height: 10vh;
+  margin-top: 2vh;
   overflow: hidden;
   position: fixed;
   top: 0;

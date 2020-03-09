@@ -1,57 +1,101 @@
 <?php 
-function convertMoisEnColone($value){
-    switch ($value) {
-        case 9:
-            return 1;
-            break;
-        case 10:
-            return 2;
-            break;
-        case 11:
-            return 3;
-            break;
-        default: 
-            return 0;
-            break;
-    }
-}
 
+$args = array(
+    'category_name' => 'Atelier',
+    'posts_per_page' => 16,
+    'orderby' => 'date'
+);
+
+//Query des articles de la catégorie : Nouvelles
+$queryNouvelles = new WP_Query( $args );
+
+$args = array(
+    'post_type'=>'post',
+    'posts_per_page' => 16,
+    'order' => 'ASC',
+    'post_status' => 'future'
+);
+
+//Query des articles de la catégorie : Nouvelles
+$queryEvenementsFutur = new WP_Query( $args );
+
+//Appel du header
 get_header();
+
 ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main">
+    <!-- Figure qui controle la cadre de l'image de mise en avant -->
+    <figure class="figure-post-thumbnail">
+        <!-- Appel de la fonction qui affiche l'image de mise en avant -->
+        <?php examen_final_post_thumbnail(); ?>
+    </figure>
+
+	<main id="main" class="site-main">
         <?php
-        echo "<h1> Catégorie : Événements</h1>";
-
-        if ( have_posts() ) :
-            echo '<div class="container-evenements">';
-                while ( have_posts() ) : the_post();
-                    $jour = (int) get_the_date('j');
-                    $mois = (int) get_the_date('n');
-                    $jourGrid = get_the_date('j') + 1;
-                    $moisGrid = convertMoisEnColone($mois);
-
-                    $gridArea = ''.$jour.'/'.$moisGrid.'/'.$jourGrid.'/'.$moisGrid.'';
-
-                    echo '
-                    <article class="articles-evenements" style="
-                        grid-area: '.$gridArea.';
-                    ">
-                        <div class="content-post">
-                            <h3 class="title-article"><a href='.get_the_permalink().'>'.substr(get_the_title(),0,20).'</a></h3>
-                            <h4 class="post-date">'.get_the_date().'</h4>
-                            <p>Grid : '.$gridArea.'</p>
-                        </div>
-                    </article>
-                    ';
-                endwhile;
-            echo '</div>';
-        endif;
+        // TO SHOW THE PAGE CONTENTS
+        while ( have_posts() ) : the_post(); 
         ?>
-    </main>
-</div>
 
-<?php
-    get_footer();
+        <!--
+        <div class="entry-content-page">
+            Page Title
+            <h1 class="entry-title"><?php //the_title(); ?></h1> 
+            
+            Page Content
+            <?php //the_content(); ?>
+        </div>
+        -->
+
+        <?php
+        endwhile; //resetting the page loop
+        wp_reset_query(); //resetting the page query.
+        ?>
+
+        <?php
+        echo '<h1>'.category_description(2).'</h1>';
+        echo '<div class="categories-container">';
+            while ( $queryNouvelles->have_posts() ) {
+                $queryNouvelles->the_post();
+                echo '
+                
+                <article class="categories-ateliers">
+                    <div class="content-post">
+                        <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
+                        <p class="field-article">'.get_post_field('post_name').'</p>
+                        <p class="author-article">'.get_the_author_meta( 'display_name', $post->post_author ).'</p>
+                    </div>
+                </article>
+                ';
+            }
+            wp_reset_postdata();
+        echo '</div>';
+        ?>
+
+        <?php
+        echo '<div class="categories-container">';
+            while ( $queryEvenementsFutur->have_posts() ) {
+                $queryEvenementsFutur->the_post();
+                echo '
+                <article class="categories-articles">
+                    <img src="'.get_the_post_thumbnail_url().'" alt="" class="image-article">
+                    <div class="content-post">
+                        <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
+                        <h4 class="post-date">'.get_the_date().'</h4>
+                        <p class="text-extract">'.substr(get_the_excerpt(),0,200).'</p>
+                    </div>
+                </article>
+                ';
+            }
+            wp_reset_postdata();
+        echo '</div>';
+        ?>
+    </main><!-- #main -->
+</div><!-- #primary -->
+
+<?php 
+
+//Appel du footer
+get_footer();
+
 ?>
