@@ -1,0 +1,92 @@
+.site-content {
+  margin-top: 8vh;
+
+  .content-area {
+    @extend %displayFlexColumnCenter;
+
+    .figure-post-thumbnail {
+      width: 100vw;
+      height: 50vh;
+
+      overflow: hidden;
+
+      margin: 0;
+      
+      div {
+        position: relative;
+        top: -15vh;
+      }
+    }
+
+    .post-thumbnail {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .site-main {
+      width: 85%;
+      margin: 2% 0;
+
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .custom-animation {
+        transform: translateX(-100vw);
+      }
+
+      .custom-animation-control {
+        @include animation(animationInFromRight 2s ease-out forwards);
+      }
+
+      .categories-container {
+        @extend %displayFlexColumnCenter;
+        align-items: flex-start;
+        width: 100%;
+
+        margin: 2% 0;
+
+        .categories-ateliers {
+          @extend %displayFlexRowCenter;
+          width: 100%;
+
+          margin: 0;
+
+          .image-article {
+            width: 200px;
+          }
+
+          .content-post {
+            margin-left: 2%;
+            width: 100%;
+
+            .title-article {
+              margin: 0.5% 0;
+              a {
+                color: $blue;
+                text-transform: uppercase;
+
+                @include transition(color 0.4s);
+
+                &:hover {
+                  color: lighten($blue, 20%);
+                }
+              }
+            }
+
+            .post-date {
+              margin: 0;
+            }
+
+            .text-extract {
+              text-align: justify;
+              text-align-last: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}

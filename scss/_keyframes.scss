@@ -1,0 +1,16 @@
+@include keyframes(animationInFromRight) {
+    from {
+        transform: skewX(45deg);
+        transform: translateX(-100vw);
+    }
+    50% {
+        transform: translateX(0vw);
+        transform: skewX(-10deg);
+    }
+    75% {
+        transform: skewX(0deg);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}

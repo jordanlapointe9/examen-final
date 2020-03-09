@@ -1,0 +1,409 @@
+@charset "UTF-8";
+/*
+Theme Name: TP2 - Veille - Child
+Theme URI: 127.0.0.1/tp2-veille
+Description: Child theme of TP2 - Programmation et Veille Technologique
+Author: Thiago Ferreira, Jordan Lapointe
+Author URI: thiagoferreira.ca
+Template: tp2-veille
+Version: 1.0
+Text Domain: tp2-veille-child
+*/
+/************ Imports ************/
+/** Variables **/
+/** Mixins **/
+/** Extends **/
+/** Fonts **/
+/** Header **/
+/** Navigation **/
+/** Default Settings (Content) **/
+/** Content **/
+/** Categories **/
+/** Keyframes **/
+/** Footer **/
+/*********************************/
+.site-header, .site-content .content-area, .site-content .content-area .site-main .categories-container, .entry-content-page, .container-evenements .articles-evenements .content-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-content, .header-content .site-branding, .navigation-container .main-navigation .menu, .site-content .content-area .site-main .categories-container .categories-ateliers, footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* {
+  font-family: 'Pavanam', sans-serif;
+}
+
+.site-header {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: auto;
+  max-height: 8vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  border-bottom: 2px solid #0978C0;
+  -webkit-transition: max-height 0.4s, top 0.2s ease-in-out;
+  transition: max-height 0.4s, top 0.2s ease-in-out;
+}
+
+.site-header #burger {
+  display: none;
+}
+
+.site-header label div {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #0978C0;
+}
+
+.header-content {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin: 0.5%;
+}
+
+.header-content .site-branding {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 50%;
+}
+
+.header-content .site-branding .custom-logo-link img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.header-content .site-branding .site-title {
+  margin-left: 2%;
+}
+
+.header-content .site-branding .site-title a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #0978C0;
+  font-size: 1.2em;
+}
+
+.header-up {
+  top: -8vh;
+}
+
+#burger:checked ~ label > div:nth-child(1) {
+  -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+          transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+#burger:checked ~ label > div:nth-child(2) {
+  opacity: 0;
+}
+
+#burger:checked ~ label > div:nth-child(3) {
+  -webkit-transform: rotate(45deg) translate(-9px, -8px);
+          transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.navigation-container {
+  width: 100%;
+  height: auto;
+}
+
+.navigation-container .main-navigation .menu {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 1%;
+}
+
+.navigation-container .main-navigation .menu li {
+  margin: 0.5%;
+  list-style: none;
+}
+
+.navigation-container .main-navigation .menu li a {
+  color: #111;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.navigation-container .main-navigation .menu li a:hover {
+  color: #0978C0;
+}
+
+body {
+  margin: 0;
+}
+
+/************ Imports ************/
+/** Front Page SCSS **/
+/** Pages SCSS **/
+/*********************************/
+.site-content {
+  margin-top: 8vh;
+}
+
+.site-content .content-area .figure-post-thumbnail {
+  width: 100vw;
+  height: 50vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.site-content .content-area .figure-post-thumbnail div {
+  position: relative;
+  top: -15vh;
+}
+
+.site-content .content-area .post-thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.site-content .content-area .site-main {
+  width: 85%;
+  margin: 2% 0;
+}
+
+.site-content .content-area .site-main h1 {
+  text-transform: uppercase;
+}
+
+.site-content .content-area .site-main .custom-animation {
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
+}
+
+.site-content .content-area .site-main .custom-animation-control {
+  -webkit-animation: animationInFromRight 2s ease-out forwards;
+  animation: animationInFromRight 2s ease-out forwards;
+}
+
+.site-content .content-area .site-main .categories-container {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin: 2% 0;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers {
+  width: 100%;
+  margin: 0;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .image-article {
+  width: 200px;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post {
+  margin-left: 2%;
+  width: 100%;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .title-article {
+  margin: 0.5% 0;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .title-article a {
+  color: #0978C0;
+  text-transform: uppercase;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .title-article a:hover {
+  color: #39acf6;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .post-date {
+  margin: 0;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .text-extract {
+  text-align: justify;
+  text-align-last: left;
+}
+
+.entry-content-page {
+  width: 85%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.entry-content-page blockquote {
+  margin: 0 5%;
+}
+
+.entry-content-page img {
+  width: 70%;
+}
+
+/************ Imports ************/
+/** Catégorie : Événements **/
+/*********************************/
+.container-evenements {
+  width: 100%;
+  height: auto;
+  border: 2px solid #111;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (27.1vw)[3];
+      grid-template-columns: repeat(3, 27.1vw);
+  grid-gap: 20px;
+}
+
+.container-evenements .articles-evenements {
+  border: 2px solid #0978C0;
+  width: 100%;
+}
+
+.container-evenements .articles-evenements .content-post .title-article {
+  margin-bottom: 0;
+}
+
+.container-evenements .articles-evenements .content-post .title-article a {
+  color: #0978C0;
+  text-transform: uppercase;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.container-evenements .articles-evenements .content-post .title-article a:hover {
+  color: #39acf6;
+}
+
+.container-evenements .articles-evenements .content-post .post-date {
+  margin: 2% 0;
+}
+
+.container-evenements .articles-evenements .content-post p {
+  margin-top: 0;
+}
+
+@-webkit-keyframes animationInFromRight {
+  from {
+    -webkit-transform: skewX(45deg);
+            transform: skewX(45deg);
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  50% {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+    -webkit-transform: skewX(-10deg);
+            transform: skewX(-10deg);
+  }
+  75% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  to {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+}
+
+@keyframes animationInFromRight {
+  from {
+    -webkit-transform: skewX(45deg);
+            transform: skewX(45deg);
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  50% {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+    -webkit-transform: skewX(-10deg);
+            transform: skewX(-10deg);
+  }
+  75% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  to {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+}
+
+footer {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 8vh;
+  border-top: 2px solid #0978C0;
+}
+
+footer .site-info {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  margin: 0 2%;
+}
+
+footer .site-info a {
+  height: 1%;
+  margin-right: 0.5%;
+  color: #111;
+  text-transform: uppercase;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+footer .site-info a:hover {
+  color: #0978C0;
+}
+
+/*********************************/
+/*# sourceMappingURL=style.css.map */

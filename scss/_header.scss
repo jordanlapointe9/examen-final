@@ -1,0 +1,88 @@
+.site-header {
+  @extend %displayFlexColumnCenter;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+  height: auto;
+
+  max-height: 8vh;
+
+  overflow: hidden;
+
+  position: fixed;
+
+  top: 0;
+
+  z-index: 1;
+  background-color: $white;
+
+  border-bottom: 2px solid $blue;
+  
+  @include transition(max-height 0.4s, top 0.2s ease-in-out);
+
+  #burger {
+    display: none;
+  }
+
+  label {
+    div {
+      width: 35px;
+      height: 5px;
+      margin: 6px 0;
+      transition: 0.4s;
+
+      background-color: $blue;
+    }
+  }
+}
+
+.header-content {
+  @extend %displayFlexRowCenter;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0.5%;
+
+  .site-branding {
+    @extend %displayFlexRowCenter;
+    justify-content: flex-start;
+
+    width: 50%;
+
+    .custom-logo-link {
+      img {
+        max-width: 40px;
+        max-height: 40px;
+      }
+    }
+    .site-title {
+      margin-left: 2%;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $blue;
+
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+.header-up {
+  top: -8vh;
+}
+
+#burger:checked ~ label > div:nth-child(1) {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+#burger:checked ~ label > div:nth-child(2) {
+  opacity: 0;
+}
+
+#burger:checked ~ label > div:nth-child(3) {
+  transform: rotate(45deg) translate(-9px, -8px);
+}

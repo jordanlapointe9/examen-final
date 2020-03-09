@@ -1,0 +1,40 @@
+/*
+Theme Name: TP2 - Veille - Child
+Theme URI: 127.0.0.1/tp2-veille
+Description: Child theme of TP2 - Programmation et Veille Technologique
+Author: Thiago Ferreira, Jordan Lapointe
+Author URI: thiagoferreira.ca
+Template: tp2-veille
+Version: 1.0
+Text Domain: tp2-veille-child
+*/
+
+/************ Imports ************/
+
+/** Variables **/
+/** Mixins **/
+/** Extends **/
+/** Fonts **/
+/** Header **/
+/** Navigation **/
+/** Default Settings (Content) **/
+/** Content **/
+/** Categories **/
+/** Keyframes **/
+/** Footer **/
+
+/*********************************/
+
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_extends.scss";
+@import "_fonts.scss";
+@import "_header.scss";
+@import "_navigation.scss";
+@import "_defaultSettings.scss";
+@import "content/_content.scss";
+@import "categories/_categories.scss";
+@import "_keyframes.scss";
+@import "_footer.scss";
+
+/*********************************/

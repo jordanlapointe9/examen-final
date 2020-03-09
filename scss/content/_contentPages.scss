@@ -1,0 +1,14 @@
+.entry-content-page{
+    width: 85%;
+
+    @extend %displayFlexColumnCenter;
+    align-items: flex-start;
+
+    blockquote{
+        margin: 0 5%;
+    }
+
+    img{
+        width: 70%;
+    }
+}
