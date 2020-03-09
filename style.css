@@ -40,7 +40,7 @@ Text Domain: tp2-veille-child
           align-items: center;
 }
 
-.header-content, .header-content .site-branding, .navigation-container .main-navigation .menu, .site-content .content-area .site-main .categories-container .categories-ateliers, footer {
+.header-content, .header-content .site-branding, .navigation-container .main-navigation .menu, .site-content .content-area .site-main .categories-container .categories-ateliers, .site-content .content-area .site-main .categories-container .categories-ateliers .content-post, footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,6 +244,14 @@ body {
 .site-content .content-area .site-main .categories-container .categories-ateliers .content-post {
   margin-left: 2%;
   width: 100%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-line-pack: left;
+      align-content: left;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
 }
 
 .site-content .content-area .site-main .categories-container .categories-ateliers .content-post .title-article {
@@ -259,6 +267,18 @@ body {
 
 .site-content .content-area .site-main .categories-container .categories-ateliers .content-post .title-article a:hover {
   color: #39acf6;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .field-article {
+  color: red;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .author-article {
+  color: blue;
+}
+
+.site-content .content-area .site-main .categories-container .categories-ateliers .content-post .field-article::before, .site-content .content-area .site-main .categories-container .categories-ateliers .content-post .author-article::before {
+  content: '_____';
 }
 
 .site-content .content-area .site-main .categories-container .categories-ateliers .content-post .post-date {

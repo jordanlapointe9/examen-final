@@ -2,7 +2,7 @@
 
 $args = array(
     'category_name' => 'Atelier',
-    'posts_per_page' => 10,
+    'posts_per_page' => 16,
     'orderby' => 'date'
 );
 
@@ -11,7 +11,7 @@ $queryNouvelles = new WP_Query( $args );
 
 $args = array(
     'post_type'=>'post',
-    'posts_per_page' => 10,
+    'posts_per_page' => 16,
     'order' => 'ASC',
     'post_status' => 'future'
 );
@@ -62,6 +62,8 @@ get_header();
                 <article class="categories-ateliers">
                     <div class="content-post">
                         <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
+                        <p class="field-article">'.get_post_field('post_name').'</p>
+                        <p class="author-article">'.get_the_author_meta( 'display_name', $post->post_author ).'</p>
                     </div>
                 </article>
                 ';
