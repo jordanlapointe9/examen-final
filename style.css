@@ -315,8 +315,8 @@ body {
   border: 2px solid #111;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (27.1vw)[3];
-      grid-template-columns: repeat(3, 27.1vw);
+  -ms-grid-columns: (20vw)[4];
+      grid-template-columns: repeat(4, 20vw);
   grid-gap: 20px;
 }
 

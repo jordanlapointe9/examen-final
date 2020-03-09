@@ -25,6 +25,10 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
+    <?php
+        echo '<h1>Cliquer sur onglet Atelier dans le menu pour afficher.</h1>';
+    ?>
+
     <!-- Figure qui controle la cadre de l'image de mise en avant -->
     <figure class="figure-post-thumbnail">
         <!-- Appel de la fonction qui affiche l'image de mise en avant -->
@@ -37,6 +41,8 @@ get_header();
         while ( have_posts() ) : the_post(); 
         ?>
 
+        
+
         <!--
         <div class="entry-content-page">
             Page Title
@@ -46,6 +52,8 @@ get_header();
             <?php //the_content(); ?>
         </div>
         -->
+
+
 
         <?php
         endwhile; //resetting the page loop

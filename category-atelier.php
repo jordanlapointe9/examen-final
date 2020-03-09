@@ -19,6 +19,26 @@ $args = array(
 //Query des articles de la catégorie : Nouvelles
 $queryEvenementsFutur = new WP_Query( $args );
 
+function convertHeureEnColone($value){
+    switch ($value) {
+        case 2:
+            return 1;
+            break;
+        case 5:
+            return 2;
+            break;
+        case 4:
+            return 3;
+            break;
+        case 6:
+            return 4;
+            break;
+        default: 
+            return 0;
+            break;
+    }
+}
+
 //Appel du header
 get_header();
 
@@ -89,6 +109,31 @@ get_header();
             }
             wp_reset_postdata();
         echo '</div>';
+
+        if ( have_posts() ) :
+            echo '<div class="container-evenements">';
+                while ( $queryNouvelles->have_posts() ) : $queryNouvelles->the_post();
+                    $heure = (int) substr(get_post_field( 'post_name'),-2);
+                    $auteur = (int) get_post_field( 'post_author', $post_author_id );
+                    $heureGrid = (int) substr(get_post_field( 'post_name'),-2);
+                    $auteurGrid = convertHeureEnColone($auteur);
+
+                    $gridArea = ''.$heure.'/'.$auteurGrid.'/'.$heureGrid.'/'.$auteurGrid.'';
+
+                    echo '
+                    <article class="articles-evenements" style="
+                        grid-area: '.$gridArea.';
+                    ">
+                        <div class="content-post">
+                            <h3 class="title-article"><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>
+                            <p class="field-article">'.get_post_field('post_name').'</p>
+                            <p class="author-article">'.get_the_author_meta( 'display_name', $post->post_author ).'</p>
+                        </div>
+                    </article>
+                    ';
+                endwhile;
+            echo '</div>';
+        endif;
         ?>
     </main><!-- #main -->
 </div><!-- #primary -->
